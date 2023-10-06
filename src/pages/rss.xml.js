@@ -7,11 +7,9 @@ export async function GET(context) {
     title: 'Astro Tips',
     description: 'My Astro Page',
     site: context.site,
-    items: posts.map((post) => {
-      return {
-        ...post.data,
-        link: `/posts/${post.slug}/`,
-      }
-    }),
+    items: posts.map((post) => ({
+      ...post.data,
+      link: `/posts/${post.slug}/`,
+    })),
   });
 }

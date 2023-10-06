@@ -2,6 +2,8 @@
 const {
   content: { title, pubDate, image, tags },
 } = Astro.props;
+const event = new Date(pubDate);
+const date = event.toDateString().slice(0, -4);
 ---
 
 <section class="dark:bg-slate-700">
@@ -29,7 +31,7 @@ const {
 
           <p class="mt-4 text-gray-600">
             <span class="flex flex-col sm:gap-y-2 md:items-center md:gap-y-0 md:divide-x md:divide-textColor">
-              <time datetime={pubDate}>{pubDate}</time>
+              <time>{date}</time>
               {
                 tags.map((tag:string[]) => (
                   <span
