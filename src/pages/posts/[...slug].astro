@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.tsx';
+import HeaderTop from '../../components/HeaderTop.tsx';
 import Footer from '../../components/Footer.vue';
 import Social from '../../components/Social.svelte';
 
@@ -17,6 +18,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 <Base title="Astro Build Tips">
+  <HeaderTop client:load />
   <Header title="Astro Tips tsx" />
   <Content />
   <Social />
